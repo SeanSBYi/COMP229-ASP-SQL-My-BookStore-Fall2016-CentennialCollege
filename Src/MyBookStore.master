@@ -1,0 +1,128 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MyBookStore.master.cs" Inherits="BalloonShop" %>
+<%@ Register Src="UserControls/CartSummary.ascx" TagName="CartSummary" TagPrefix="uc6" %>
+<%@ Register Src="UserControls/UserInfo.ascx" TagName="UserInfo" TagPrefix="uc5" %>
+<%@ Register Src="UserControls/SearchBox.ascx" TagName="SearchBox" TagPrefix="uc4" %>
+<%@ Register Src="UserControls/CategoriesList.ascx" TagName="CategoriesList" TagPrefix="uc3" %>
+<%@ Register Src="UserControls/DepartmentsList.ascx" TagName="DepartmentsList" TagPrefix="uc2" %>
+<%@ Register Src="UserControls/Header.ascx" TagName="Header" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Best Book Store</title>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <link href="css/MyCSS.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+  <form id="Form1" runat="server">
+      <br />
+      <br />
+       <div style="width: 100%; text-align: center; vertical-align: middle">
+        <table id="MenuStyleUp">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="td_cart">
+                    <uc6:CartSummary ID="CartSummary1" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td class="defaul_style_left">
+                    <uc1:Header ID="Header1" runat="server" />
+                </td>
+                <td></td>
+                <td style="float: right;"><uc5:UserInfo ID="UserInfo1" runat="server" /></td>
+                <td>
+                    <img src="Images/search_magnify.png" style="float: right;">
+                </td>
+                <td class="defaul_style_center" colspan="3">
+                    <uc4:SearchBox id="SearchBox1" runat="server">
+                    </uc4:SearchBox>
+                </td>
+            </tr>
+        </table>
+
+        <table id="MenuStyleDown">
+            <tr>
+                <td>
+                    <%--
+                    <nav id="topMenu" >
+                            <ul>
+                                    <li><a class="menuLink" href="#">About us</a></li>
+                                    <li><a class="menuLink" href="MyBookList.aspx">Adult Book</a></li>
+                                    <li><a class="menuLink" href="#">Teen Book</a></li>
+                                    <li><a class="menuLink" href="#">Kid&#39;s Book</a></li>
+                                    <li><a class="menuLink" href="#">Audio Book</a></li>
+                            </ul>
+                    </nav>
+                    --%>
+                    <uc2:DepartmentsList ID="DepartmentsList1" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="MainContent">
+                        <table>
+                            <tr>
+                                <td colspan="2">
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%; vertical-align: top">
+                                    <br />
+                                    <uc3:CategoriesList ID="CategoriesList1" runat="server" />
+                                </td>
+                                <td style="width: 80%">
+                                    <br />
+                                    <asp:ContentPlaceHolder ID="contentPlaceHolder" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </td>
+                            </tr>
+                        </table>
+                    
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+        
+        
+        <br />
+        <table id="FooterStyle">
+            <tr>
+                <td>
+                    <div class="footer_style">
+                        © 2015 Allied Books. All rights reserved. Group 3 - Sangbeom Yi, Kevin Burnside
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+      <br />
+      <br />
+    <table cellspacing="0" cellpadding="0" width="770" border="0">
+      <tr>
+        <td width="220" valign="top">
+          
+          <br />
+
+          <br />
+
+        </td>
+        <td valign="top">
+          
+
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>
